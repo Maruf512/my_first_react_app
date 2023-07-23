@@ -1,24 +1,18 @@
 import "./App.css";
-import { Planets } from "./Planets";
+import { useState } from "react";
 
 function App() {
-  // creating object
-
-  const planets = [
-    { name: "Mars", isGasPlanet: false },
-    { name: "Earth", isGasPlanet: false },
-    { name: "Jupiter", isGasPlanet: true },
-    { name: "Venus", isGasPlanet: false },
-    { name: "Neptune", isGasPlanet: true },
-    { name: "Uranus", isGasPlanet: true },
-  ];
+  // create useState obj!
+  const [count, setCount] = useState(0);
 
   // rander from here
   return (
     <div className="App">
-      {planets.map(
-        (planet) => !planet.isGasPlanet && <Planets name={planet.name} />
-      )}
+      <button onClick={() => setCount(count + 1)}>Increase</button>
+      <button onClick={() => setCount(count - 1)}>Decrease</button>
+      <button onClick={() => setCount(0)}>Set to Zero</button>
+
+      {count}
     </div>
   );
 }
