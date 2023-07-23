@@ -1,20 +1,23 @@
+// 1. create input and add button and a list div
+// 2. create addTask function
+// 3. vied data on list div
+// 4. create delet function
+// 5. add compleate button
+// 6. if task is completed mark that as done and change background color to green
+
 import "./App.css";
-import { useState } from "react";
 
 function App() {
-  // create useState obj!
-  const [count, setCount] = useState(0);
-
-  // rander from here
-  return (
-    <div className="App">
-      <button onClick={() => setCount(count + 1)}>Increase</button>
-      <button onClick={() => setCount(count - 1)}>Decrease</button>
-      <button onClick={() => setCount(0)}>Set to Zero</button>
-
-      {count}
-    </div>
-  );
+    return (
+        <div className="App">
+            <h1>Welcome... Save time by Managing your Task's.</h1>
+            <div className="addTaskDiv">
+                <input type="text" />
+                <button>Add a Task</button>
+            </div>
+            <div className="viewTasks"></div>
+        </div>
+    );
 }
 
 export default App;
