@@ -1,10 +1,3 @@
-// 1. create input and add button and a list div
-// 2. create addTask function
-// 3. vied data on list div
-// 4. create delet function
-// 5. add compleate button
-// 6. if task is completed mark that as done and change background color to green
-
 import "./App.css";
 import { useState } from "react";
 import { Task } from "./Task";
@@ -27,7 +20,7 @@ function App() {
                     ? 1
                     : toDoList[toDoList.length - 1].id + 1,
             taskName: newToDo,
-            compleat: false,
+            complete: false,
         };
         setToDoList(task.taskName !== "" ? [...toDoList, task] : toDoList);
     };
@@ -39,8 +32,11 @@ function App() {
 
     // task completed
     const completeTask = (id) => {
-        console.log("CompleteTask");
-        console.log(id);
+        toDoList.forEach((toDo) => {
+            if (toDo.id === id) {
+                toDo.complete = true;
+            }
+        });
     };
 
     return (
@@ -57,7 +53,7 @@ function App() {
                             <Task
                                 taskName={task.taskName}
                                 id={task.id}
-                                compleat={task.compleat}
+                                complete={task.complete}
                                 deleteTask={deleteTask}
                                 completeTask={completeTask}
                             />
