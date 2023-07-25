@@ -41,7 +41,6 @@ function App() {
 
     return (
         <div className="App">
-            <h1>Welcome... Save time by Managing your Task's.</h1>
             <div className="addTaskDiv">
                 <input type="text" onChange={handleChange} />
                 <button onClick={addTask}>Add Task</button>
